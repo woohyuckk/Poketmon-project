@@ -8,11 +8,17 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
   body {
-    font-family: "Arial", sans-serif;
+    font-family: 'Pretendard-Regular', sans-serif;
     line-height: 1.5;
-    background-color: #f8f9fa;
+    background-color:rgb(188, 243, 206);
     color: #333;
   }
 
@@ -31,6 +37,10 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     height: auto;
     display: block;
+  }
+
+  h1{
+    font-size: 72px;
   }
 `;
 

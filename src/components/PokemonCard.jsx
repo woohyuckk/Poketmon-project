@@ -10,13 +10,16 @@ const StyledPokemonCard = styled.div`
   background-color: white;
 `;
 
-const PokemonCard = ({ data: { img_url, korean_name, types } }) => {
+const PokemonCard = ({
+  data: { img_url, korean_name, id },
+  myPokemonHandler,
+}) => {
   return (
     <StyledPokemonCard>
       <img src={img_url} />
       <h3>{korean_name}</h3>
-      <p>타입 : {types}</p>
-      <button>추가</button>
+      <p>No.{String(id).padStart(3, "0")}</p>
+      <button onClick={() => myPokemonHandler(id)}>추가</button>
     </StyledPokemonCard>
   );
 };

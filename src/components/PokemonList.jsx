@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import MOCK_DATA from "../utils/mokdata";
+
 import PokemonCard from "./PokemonCard";
 
 const StyledPokemonList = styled.div`
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 10px;
     padding: 10px;
 
@@ -15,11 +15,29 @@ const StyledPokemonList = styled.div`
     margin: 10px;
 `;
 
-const PokemonList = () => {
+const PokemonList = ({ pokemonList, myPokemon,setMyPokemon }) => {
+  
+  const addMyPokemon = (pokemonId) => {
+
+    const hasPokemon = myPokemon.some((pokemon) => pokemon.id === pokemonId)
+    
+    if (hasPokemon) {
+      alert("이미 선택된 포켓몬입니다.")
+      return
+    }
+    
+    setMyPokemon((prev) => {
+        const newMyPokemon = pokemonList.find((pokemon) => pokemon.id === pokemonId)
+        
+        return [...prev, newMyPokemon]
+    })
+  }
+  
+
   return (
     <StyledPokemonList>
-          {MOCK_DATA.map((data) => (
-          <PokemonCard key ={data.id} data={data}></PokemonCard>
+          {pokemonList.map((data) => (
+              <PokemonCard key={data.id} data={data} pokemonList={pokemonList} myPokemonHandler={addMyPokemon}></PokemonCard>
 
       ))}
     </StyledPokemonList>

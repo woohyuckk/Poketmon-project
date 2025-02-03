@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <StyledHome>
       <Link to="/Dex">
-        <img src="/src/International_Pokémon_logo.svg" />
+        <img src="/src/assets/International_Pokémon_logo.svg" />
         <button> Pokemon 도감 시작하기</button>
       </Link>
     </StyledHome>
