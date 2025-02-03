@@ -9,7 +9,7 @@ const StyledPokemonList = styled.div`
     padding: 10px;
 
     background-color : lightgray ;
-    border: 3px solid #54db42;
+    border: 3px solid #7f9b7c;
     border-radius: 12px;
     box-shadow: 0 0 10px #444;
     margin: 10px;
