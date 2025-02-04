@@ -25,14 +25,10 @@ const StyledMypokemonContainer = styled.div`
 `;
 
 const Dashboard = ({ pokemonList }) => {
-  const { myPokemon, setMyPokemon } = useContext(PokemonContext);
+  const { myPokemon, removeMyPokemon } = useContext(PokemonContext);
 
-  const removeMyPokemon = (pokemonId) => {
-    setMyPokemon((prev) => {
-      const deletePokemon = prev.filter((pokemon) => pokemon.id !== pokemonId);
-      return deletePokemon;
-    });
-  };
+
+ 
   return (
     <StyledDashboard>
       <h1>나만의 포켓몬</h1>
