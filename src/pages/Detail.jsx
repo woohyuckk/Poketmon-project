@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import {  useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import { addMyPokemon, removeMyPokemon } from "../store/myPokemonSlice";
-
+import pokemonList from '../utils/mokdata'
 const StyledDetailCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,11 +18,15 @@ const StylePokemonName = styled.p`
   font-weight: bold;
 `;
 
+const StyledPokemonImg = styled.img`
+width: 50%;
+`
+
 const Detail = () => {
   // URL에서 query parameters 가져오기
-  const location = useLocation();
+  
   const [searchParams] = useSearchParams();
-  const { pokemonList } = location.state;
+  
   const id = Number(searchParams.get("id"));
 
   // Redux Hooks 사용
@@ -36,7 +40,7 @@ const Detail = () => {
 
   return pokemon ? (
     <StyledDetailCard>
-      <img src={pokemon.img_url} alt={pokemon.korean_name} />
+      <StyledPokemonImg src={pokemon.img_url} alt={pokemon.korean_name} />
       <p>No.{String(id).padStart(3, "0")}</p>
       <StylePokemonName>{pokemon.korean_name}</StylePokemonName>
       <p>{pokemon.types.join(", ")}</p>
