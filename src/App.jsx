@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Dex from "./pages/Dex";
 import GlobalStyle from "./style/style.js";
 import Detail from "./pages/Detail.jsx";
+import { ToastContainer } from "react-toastify";
 const App = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/detail" element={<Detail/>}/>
         </Routes>
       </BrowserRouter>
+      <ToastContainer/>
     </>
   );
 };
