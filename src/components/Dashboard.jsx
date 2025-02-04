@@ -14,28 +14,34 @@ const StyledDashboard = styled.div`
 
 const StyledMypokemonContainer = styled.div`
   display: flex;
-  gap : 50px;
+  justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  
 `;
 
-const Dashboard = ({ myPokemon, setMyPokemon }) => {
-
-    const removeMyPokemon = (pokemonId) => {
-        setMyPokemon((prev) => {
-            const deletePokemon = prev.filter((pokemon) => pokemon.id !== pokemonId)
-            return deletePokemon
-        })
-    }
+const Dashboard = ({pokemonList, myPokemon, setMyPokemon }) => {
+  const removeMyPokemon = (pokemonId) => {
+    setMyPokemon((prev) => {
+      const deletePokemon = prev.filter((pokemon) => pokemon.id !== pokemonId);
+      return deletePokemon;
+    });
+  };
   return (
     <StyledDashboard>
       <h1>나만의 포켓몬</h1>
       <StyledMypokemonContainer>
         {myPokemon.map((data) => (
-          <PokemonCard key={data.id} data={data} myPokemonHandler={removeMyPokemon}></PokemonCard>
+          <PokemonCard
+            key={data.id}
+            data={data}
+            myPokemonHandler={removeMyPokemon}
+            pokemonList={pokemonList}
+            statusButton = "삭제"
+            
+          ></PokemonCard>
         ))}
       </StyledMypokemonContainer>
     </StyledDashboard>

@@ -25,6 +25,11 @@ const PokemonList = ({ pokemonList, myPokemon,setMyPokemon }) => {
       alert("이미 선택된 포켓몬입니다.")
       return
     }
+
+    if (myPokemon.length === 6) {
+      alert("포켓몬은 6마리까지 소유 가능합니다.")
+      return
+    }
     
     setMyPokemon((prev) => {
         const newMyPokemon = pokemonList.find((pokemon) => pokemon.id === pokemonId)
@@ -37,7 +42,7 @@ const PokemonList = ({ pokemonList, myPokemon,setMyPokemon }) => {
   return (
     <StyledPokemonList>
           {pokemonList.map((data) => (
-              <PokemonCard key={data.id} data={data} pokemonList={pokemonList} myPokemonHandler={addMyPokemon}></PokemonCard>
+              <PokemonCard key={data.id} data={data} pokemonList={pokemonList} myPokemonHandler={addMyPokemon}statusButton="추가"></PokemonCard>
 
       ))}
     </StyledPokemonList>
