@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 import PokemonCard from "./PokemonCard";
-
-import { useContext } from "react";
-import { PokemonContext } from "../context/PokemonContext";
+import { useDispatch } from "react-redux";
+import { addMyPokemon } from "../store/myPokemonSlice";
 
 const StyledPokemonList = styled.div`
   display: grid;
@@ -19,7 +18,7 @@ const StyledPokemonList = styled.div`
 `;
 
 const PokemonList = ({ pokemonList }) => {
-  const { addMyPokemon } = useContext(PokemonContext);
+  const dispatch = useDispatch();
 
   return (
     <StyledPokemonList>
@@ -28,7 +27,7 @@ const PokemonList = ({ pokemonList }) => {
           key={data.id}
           data={data}
           pokemonList={pokemonList}
-          myPokemonHandler={addMyPokemon}
+          myPokemonHandler={() => dispatch(addMyPokemon(data.id))}
           statusButton="추가"
         ></PokemonCard>
       ))}

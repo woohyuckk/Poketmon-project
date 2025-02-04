@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import { useContext } from "react";
-import { PokemonContext } from "../context/PokemonContext";
+import { useDispatch, useSelector } from "react-redux";
+import { removeMyPokemon } from "../store/myPokemonSlice";
 
 const StyledDashboard = styled.div`
   display: flex;
@@ -38,7 +38,8 @@ const StyledPokeBall = styled.div`
 `
 
 const Dashboard = ({ pokemonList }) => {
-  const { myPokemon, removeMyPokemon } = useContext(PokemonContext);
+  const myPokemon = useSelector((state) => state.myPokemon.myPokemon);
+  const dispatch = useDispatch();
   const MAX_POKEMON = 6;
   const slots = Array.from({ length: MAX_POKEMON }, (_, i) => {
     // i번째 슬롯에 선택된 포켓몬이 있다면 포켓몬 카드 컴포넌트를 렌더링
@@ -48,7 +49,7 @@ const Dashboard = ({ pokemonList }) => {
         <PokemonCard
           key={data.id}
           data={data}
-          myPokemonHandler={removeMyPokemon}
+          myPokemonHandler={() => dispatch(removeMyPokemon(data.id))}
           pokemonList={pokemonList}
           statusButton="삭제"
         />

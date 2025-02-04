@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import { PokemonContext } from "../context/PokemonContext";
+import { addMyPokemon, removeMyPokemon } from "../store/myPokemonSlice";
 
 const StyledDetailCard = styled.div`
   display: flex;
@@ -19,31 +19,33 @@ const StylePokemonName = styled.p`
 `;
 
 const Detail = () => {
-  // page query data에서 id와 state 추출
+  // URL에서 query parameters 가져오기
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { pokemonList } = location.state;
-  const id = searchParams.get("id");
-  // router
-  const navigation = useNavigate();
-  const { myPokemon, addMyPokemon, removeMyPokemon } =
-    useContext(PokemonContext);
+  const id = Number(searchParams.get("id"));
 
-  const isMyPokemon = myPokemon.some((list) => list.id === Number(id));
-  const pokemon = pokemonList.find((list) => list.id === Number(id));
+  // Redux Hooks 사용
+  const myPokemon = useSelector((state) => state.myPokemon.myPokemon);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // 현재 포켓몬이 이미 내 포켓몬인지 확인
+  const isMyPokemon = myPokemon.some((pokemon) => pokemon.id === id);
+  const pokemon = pokemonList.find((list) => list.id === id);
 
   return pokemon ? (
     <StyledDetailCard>
-      <img src={pokemon.img_url}></img>
+      <img src={pokemon.img_url} alt={pokemon.korean_name} />
       <p>No.{String(id).padStart(3, "0")}</p>
       <StylePokemonName>{pokemon.korean_name}</StylePokemonName>
-      <p>{pokemon.types}</p>
+      <p>{pokemon.types.join(", ")}</p>
       <p>{pokemon.description}</p>
-      <button onClick={() => navigation("/Dex")}>뒤로가기</button>
+      <button onClick={() => navigate("/Dex")}>뒤로가기</button>
       {isMyPokemon ? (
-        <button onClick={() => removeMyPokemon(pokemon.id)}>삭제</button>
+        <button onClick={() => dispatch(removeMyPokemon(pokemon.id))}>삭제</button>
       ) : (
-        <button onClick={() => addMyPokemon(pokemon.id)}>추가</button>
+        <button onClick={() => dispatch(addMyPokemon(pokemon.id))}>추가</button>
       )}
     </StyledDetailCard>
   ) : (
