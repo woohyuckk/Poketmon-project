@@ -20,7 +20,7 @@ const StylePokemonName = styled.p`
 `;
 
 const StyledPokemonImg = styled.img`
-width: 30%;
+width: 40%;
 `
 
 const Detail = () => {
