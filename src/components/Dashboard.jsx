@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 
 const StyledDashboard = styled.div`
   display: flex;
@@ -22,7 +24,9 @@ const StyledMypokemonContainer = styled.div`
   box-sizing: border-box;
 `;
 
-const Dashboard = ({pokemonList, myPokemon, setMyPokemon }) => {
+const Dashboard = ({ pokemonList }) => {
+  const { myPokemon, setMyPokemon } = useContext(PokemonContext);
+
   const removeMyPokemon = (pokemonId) => {
     setMyPokemon((prev) => {
       const deletePokemon = prev.filter((pokemon) => pokemon.id !== pokemonId);
@@ -39,8 +43,7 @@ const Dashboard = ({pokemonList, myPokemon, setMyPokemon }) => {
             data={data}
             myPokemonHandler={removeMyPokemon}
             pokemonList={pokemonList}
-            statusButton = "삭제"
-            
+            statusButton="삭제"
           ></PokemonCard>
         ))}
       </StyledMypokemonContainer>

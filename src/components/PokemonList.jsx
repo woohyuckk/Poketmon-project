@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 import PokemonCard from "./PokemonCard";
-import { Slide, toast } from "react-toastify";
+
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 
 const StyledPokemonList = styled.div`
   display: grid;
@@ -15,40 +17,9 @@ const StyledPokemonList = styled.div`
   box-shadow: 0 0 10px #444;
   margin: 10px;
 `;
-const toastOption = {
-  position: "bottom-right",
-  autoClose: 3000,
-  hideProgressBar: false,
-  closeOnClick: false,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: "light",
-  transition: Slide,
-};
 
-const PokemonList = ({ pokemonList, myPokemon, setMyPokemon }) => {
-  const addMyPokemon = (pokemonId) => {
-    const hasPokemon = myPokemon.some((pokemon) => pokemon.id === pokemonId);
-
-    if (hasPokemon) {
-      toast("🦄 이미 선택된 포켓몬입니다.", toastOption);
-      return;
-    }
-
-    if (myPokemon.length === 6) {
-      toast("❌ 포켓몬은 6마리까지 소유 가능합니다", toastOption);
-      return;
-    }
-
-    setMyPokemon((prev) => {
-      const newMyPokemon = pokemonList.find(
-        (pokemon) => pokemon.id === pokemonId
-      );
-
-      return [...prev, newMyPokemon];
-    });
-  };
+const PokemonList = ({ pokemonList }) => {
+  const { addMyPokemon } = useContext(PokemonContext);
 
   return (
     <StyledPokemonList>
