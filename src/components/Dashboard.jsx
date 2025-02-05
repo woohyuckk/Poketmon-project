@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { useDispatch, useSelector } from "react-redux";
+import { removeMyPokemon } from "../store/myPokemonSlice";
 
 const StyledDashboard = styled.div`
   display: flex;
@@ -14,30 +16,61 @@ const StyledDashboard = styled.div`
 
 const StyledMypokemonContainer = styled.div`
   display: flex;
-  gap : 50px;
+  justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  
 `;
 
-const Dashboard = ({ myPokemon, setMyPokemon }) => {
+const StyledPokeBall = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width : 100px;
+  height : 100px;
+  padding : 10px;
+  border: 3px dotted #befcc1;
+  border-radius: 12px;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+`
 
-    const removeMyPokemon = (pokemonId) => {
-        setMyPokemon((prev) => {
-            const deletePokemon = prev.filter((pokemon) => pokemon.id !== pokemonId)
-            return deletePokemon
-        })
+const Dashboard = ({ pokemonList }) => {
+  const myPokemon = useSelector((state) => state.myPokemon.myPokemon);
+  const dispatch = useDispatch();
+  const MAX_POKEMON = 6;
+  const slots = Array.from({ length: MAX_POKEMON }, (_, i) => {
+    // i번째 슬롯에 선택된 포켓몬이 있다면 포켓몬 카드 컴포넌트를 렌더링
+    if (i < myPokemon.length) {
+      const data = myPokemon[i];
+      return (
+        <PokemonCard
+          key={data.id}
+          data={data}
+          myPokemonHandler={() => dispatch(removeMyPokemon(data.id))}
+          pokemonList={pokemonList}
+          statusButton="삭제"
+        />
+      );
     }
+    // 아직 선택되지 않은 슬롯은 포켓볼 이미지로 표시
+    return (
+      <StyledPokeBall key = {Date.now()+i}>
+      <img
+        key={`pokeball-${i}`}
+        src={"/src/assets/pokeball.png"}
+        alt="Pokeball"
+        />
+        </StyledPokeBall>
+    );
+  });
+
   return (
     <StyledDashboard>
       <h1>나만의 포켓몬</h1>
-      <StyledMypokemonContainer>
-        {myPokemon.map((data) => (
-          <PokemonCard key={data.id} data={data} myPokemonHandler={removeMyPokemon}></PokemonCard>
-        ))}
-      </StyledMypokemonContainer>
+      <StyledMypokemonContainer>{slots}</StyledMypokemonContainer>
     </StyledDashboard>
   );
 };

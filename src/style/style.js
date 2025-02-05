@@ -42,6 +42,25 @@ const GlobalStyle = createGlobalStyle`
   h1{
     font-size: 72px;
   }
+
+  button {
+
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    
+    background-color: #333;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+
+    &:hover {
+    background-color: red;
+
+    }
+  }
 `;
 
 export default GlobalStyle;

@@ -10,12 +10,23 @@ const StyledHome = styled.div`
   height: 100vh;
 `;
 
+const StyledTitle = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+`
+
 const Home = () => {
   return (
     <StyledHome>
       <Link to="/Dex">
-        <img src="/src/assets/International_Pokémon_logo.svg" />
-        <button> Pokemon 도감 시작하기</button>
+        <StyledTitle>
+          <img src="/src/assets/International_Pokémon_logo.svg" />
+          <button> Pokemon 도감 시작하기</button>
+        </StyledTitle>
       </Link>
     </StyledHome>
   );
