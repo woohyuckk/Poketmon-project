@@ -1,8 +1,38 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+## Main Branch - redux
+## Branch - prop-drilling
+## Branch - context
+
+```
+📦 src
+├─ assets
+│  ├─ poketball.png
+│  └─ Pokemontitle.svg
+├─ component
+│  ├─ Dashboard.jsx
+│  ├─ PokemonCard.jsx
+│  └─ PokemonList.jsx
+├─ ---------- context ----------------
+├─ context
+│  └─ PokemonContext.jsx
+├─ ---------- redux ------------------
+store
+│  ├─ myPokemonSlice.js
+│  └─ store.js
+├─ pag
+│  ├─ Detail.jsx
+│  ├─ Dex.jsx
+│  └─ Home.jsx
+├─ style
+│  └─ style.js
+├─ utils
+│  └─ mokdata.js
+└─ App.jsx
+```
+
