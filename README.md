@@ -3,10 +3,9 @@
 <img src="https://github.com/user-attachments/assets/96771bed-b33c-44ed-a2ad-d185c1bd8277"/>
 </div>
 
----
 ## 배포 주소
 > **Vercel 배포** : [나만의 포켓몬 보러가기](https://poketmon-project-r5dbfjp2w-woohyucks-projects.vercel.app/Dex) 
----
+
 ## 주요 기능
 ### 🌟 나만의 포켓몬 (6개) 선택 가능 및 상세 포켓몬 세부내용 페이지 제공
 1. 3개의 Branch(prop-driling, context, redux)를 만들어 3가지 방식으로 구현되었습니다.
@@ -19,10 +18,7 @@
   <img width="300px" src="https://github.com/user-attachments/assets/7faba44d-29d6-4914-ac53-877da9899730"/>
 </div>
 
----
 ## Directory 구조 / branch - prop-driling, context, redux
-
-```
 📦 src
 ├─ assets
 │  ├─ poketball.png
