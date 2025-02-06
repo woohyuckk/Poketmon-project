@@ -17,7 +17,14 @@ const StyledTitle = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 50%;
+  
+  img{
+    width : 30vw;
+
+    @media screen {
+     width : 50vw;
+    }
+  }
 `
 
 const Home = () => {
