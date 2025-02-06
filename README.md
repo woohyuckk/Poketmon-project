@@ -5,6 +5,16 @@
 
 ## 배포 주소
 > **Vercel 배포** : [나만의 포켓몬 보러가기](https://poketmon-project-r5dbfjp2w-woohyucks-projects.vercel.app/Dex) 
+### 설치 가이드 
+``` bash
+$ git clone https://github.com/Voluntain-SKKU/Voluntain-2nd.git
+$ cd Voluntain-2nd
+```
+### 
+```
+$ yarn
+$ yarn dev 
+```
 
 ## 주요 기능
 ### 🌟 나만의 포켓몬 (6개) 선택 가능 및 상세 포켓몬 세부내용 페이지 제공
