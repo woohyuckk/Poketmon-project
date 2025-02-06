@@ -24,7 +24,7 @@ const Home = () => {
     <StyledHome>
       <Link to="/Dex">
         <StyledTitle>
-          <img src="https://github.com/woohyuckk/Poketmon-project/blob/main/src/assets/International_Pok%C3%A9mon_logo.svg" />
+          <img src="https://raw.githubusercontent.com/woohyuckk/Poketmon-project/0f55ed9284315a0a14a9b081d2a3bcd8209da0af/src/assets/International_Pok%C3%A9mon_logo.svg" />
           <button> Pokemon 도감 시작하기</button>
         </StyledTitle>
       </Link>

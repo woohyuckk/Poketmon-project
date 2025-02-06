@@ -60,7 +60,7 @@ const Dashboard = ({ pokemonList }) => {
       <StyledPokeBall key = {Date.now()+i}>
       <img
         key={`pokeball-${i}`}
-        src={"https://github.com/woohyuckk/Poketmon-project/blob/main/src/assets/pokeball.png"}
+        src={"https://github.com/woohyuckk/Poketmon-project/blob/main/src/assets/pokeball.png?raw=true"}
         alt="Pokeball"
         />
         </StyledPokeBall>
