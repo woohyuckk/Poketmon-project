@@ -4,7 +4,7 @@
 </div>
 
 ## 배포 주소
-> **Vercel 배포** : [나만의 포켓몬 보러가기](https://poketmon-project-r5dbfjp2w-woohyucks-projects.vercel.app/Dex) 
+> **Vercel 배포** : [나만의 포켓몬 보러가기](https://poketmon-project-r5dbfjp2w-woohyucks-projects.vercel.app/) 
 ### 설치 가이드 
 ``` bash
 $ git clone https://github.com/woohyuckk/Poketmon-project.git
