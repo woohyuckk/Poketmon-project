@@ -7,8 +7,8 @@
 > **Vercel 배포** : [나만의 포켓몬 보러가기](https://poketmon-project-r5dbfjp2w-woohyucks-projects.vercel.app/Dex) 
 ### 설치 가이드 
 ``` bash
-$ git clone https://github.com/Voluntain-SKKU/Voluntain-2nd.git
-$ cd Voluntain-2nd
+$ git clone https://github.com/woohyuckk/Poketmon-project.git
+$ cd Poketmon-project
 ```
 ### 
 ```
