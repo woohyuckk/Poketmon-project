@@ -6,7 +6,7 @@ import { addMyPokemon } from "../store/myPokemonSlice";
 
 const StyledPokemonList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-gap: 10px;
   padding: 10px;
 

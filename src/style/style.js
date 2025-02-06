@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Pretendard-Regular', sans-serif;
     line-height: 1.5;
-    background-color:rgb(188, 243, 206);
+    background-color: #befcc1;
     color: #333;
   }
 

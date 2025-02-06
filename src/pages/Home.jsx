@@ -6,7 +6,7 @@ const StyledHome = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #d0febd;
+  background-color: #befcc1;
   height: 100vh;
 `;
 
