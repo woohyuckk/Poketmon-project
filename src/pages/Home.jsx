@@ -17,6 +17,7 @@ const StyledTitle = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  width: 50%;
 `
 
 const Home = () => {
