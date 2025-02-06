@@ -19,6 +19,7 @@
 </div>
 
 ## Directory 구조 / branch - prop-driling, context, redux
+```
 📦 src
 ├─ assets
 │  ├─ poketball.png
