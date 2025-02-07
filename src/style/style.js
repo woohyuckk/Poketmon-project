@@ -39,9 +39,7 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
-  h1{
-    font-size: 72px;
-  }
+
 
   button {
 

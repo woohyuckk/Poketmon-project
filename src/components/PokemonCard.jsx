@@ -7,7 +7,7 @@ const StyledPokemonCard = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 0 5px #befcc1;
+  box-shadow: 0 0 5px rgba(255, 90, 90, 1);
   border-radius: 12px;
   background-color: white;
   transition: transform 0.3s ease-in-out;
