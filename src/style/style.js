@@ -45,20 +45,23 @@ const GlobalStyle = createGlobalStyle`
 
     box-sizing: border-box;
     padding: 5px;
-    border: 1px solid #333;
+    
     border-radius: 5px;
     
-    background-color: #333;
+    background-color:rgb(146, 160, 90);
     color: white;
     margin-bottom: 5px;
     font-weight: bold;
-
+    cursor: pointer;
+    transition: background-color 0.5 ease;
 
     &:hover {
     background-color: red;
 
     }
   }
+
+
 `;
 
 export default GlobalStyle;
