@@ -27,7 +27,6 @@ const myPokemonSlice = createSlice({
       const MAX_POKEMON = 6;
 
 
-
       if (hasPokemon) {
         toast("🦄 이미 선택된 포켓몬입니다.", toastOption);
         return;
