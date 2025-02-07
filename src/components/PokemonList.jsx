@@ -25,7 +25,6 @@ const PokemonList = ({ pokemonList }) => {
         <PokemonCard
           key={data.id}
           data={data}
-          pokemonList={pokemonList}
           myPokemonHandler={() => dispatch(addMyPokemon(data.id))}
           statusButton="추가"
         ></PokemonCard>

@@ -20,12 +20,11 @@ const StyledPokemonCard = styled.div`
 const PokemonCard = ({
   data: { img_url, korean_name, id },
   myPokemonHandler,
-  pokemonList,
   statusButton,
 }) => {
   return (
     <StyledPokemonCard>
-      <Link to={`/detail?id=${id}`} state={{ pokemonList }}>
+      <Link to={`/detail?id=${id}`}>
         <img src={img_url} />
         <h3>{korean_name}</h3>
         <p>No.{String(id).padStart(3, "0")}</p>
