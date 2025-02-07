@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import { useDispatch } from "react-redux";
-import { addMyPokemon } from "../store/myPokemonSlice";
+import useMypokemon from "../hooks/useMyPokemon";
 
 const StyledPokemonList = styled.div`
   display: grid;
@@ -17,15 +16,15 @@ const StyledPokemonList = styled.div`
 `;
 
 const PokemonList = ({ pokemonList }) => {
-  const dispatch = useDispatch();
 
+  const { addPokemon } = useMypokemon();
   return (
     <StyledPokemonList>
       {pokemonList.map((data) => (
         <PokemonCard
           key={data.id}
           data={data}
-          myPokemonHandler={() => dispatch(addMyPokemon(data.id))}
+          myPokemonHandler={addPokemon}
           statusButton="추가"
         ></PokemonCard>
       ))}

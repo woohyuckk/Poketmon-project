@@ -3,6 +3,8 @@ import PokemonList from "../components/PokemonList";
 import MOCK_DATA from "../utils/mokdata";
 
 const Dex = () => {
+
+  
   return (
     <>
       <Dashboard pokemonList={MOCK_DATA}></Dashboard>
