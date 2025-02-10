@@ -81,7 +81,7 @@ const Dashboard = () => {
       }
       // 아직 선택되지 않은 슬롯은 포켓볼 이미지로 표시
       return (
-        <StyledPokeBall key={i}>
+        <StyledPokeBall key={Date.now()+i}>
           <img
             key={`pokeball-${i}`}
             src={
