@@ -20,7 +20,7 @@ $ yarn dev
 ### 🌟 나만의 포켓몬 (6개) 선택 가능 및 상세 포켓몬 세부내용 페이지 제공
 1. 3개의 Branch(prop-driling, context, redux)를 만들어 3가지 방식으로 구현되었습니다.
 2. localStorage를 활용하여 나만의 포켓몬이 저장됩니다.
-3. 포켓몬 선택이나 삭제의 알람은 toast를 통해 구현되었습니다.
+3. 포켓몬 선택이나 삭제에 사용된 alert는 toast를 통해 구현되었습니다.
 4. Page간 이동은 Link와 useNavigate를 두가지 다 사용하였습니다.
 <div display="gird" grid-template-columns ="repeat(3,1fr)" gap="15px" >
   <img width="300px" src="https://github.com/user-attachments/assets/be0bb665-d008-4ac6-89f7-f3926ad0a691"/>
