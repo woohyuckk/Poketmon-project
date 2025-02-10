@@ -17,6 +17,7 @@ const toastOption = {
   
 const MAX_POKEMON = 6;
 
+// Custom Hook - 포켓몬 추가, 제거 handler
 
 const useMypokemon = () => {
     
@@ -36,7 +37,7 @@ const useMypokemon = () => {
         return;
       }
 
-        dispatch(addMyPokemon(newPokemon));
+      dispatch(addMyPokemon(newPokemon));
       toast(`✅ ${newPokemon.korean_name} 추가됨!`, toastOption);
 
     };

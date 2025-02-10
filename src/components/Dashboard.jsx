@@ -60,6 +60,7 @@ const Dashboard = ({ pokemonList }) => {
   const myPokemon = useSelector((state) => state.myPokemon.myPokemon);
   const { removePokemon } = useMypokemon();
 
+  // myPokemon이 변경 될 때마다 localStorage에 저장
   useEffect(() => {
     localStorage.setItem("myPokemon", JSON.stringify(myPokemon));
   },[myPokemon])

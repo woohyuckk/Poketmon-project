@@ -1,8 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {  useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import { addMyPokemon, removeMyPokemon } from "../store/myPokemonSlice";
 import pokemonList from"../utils/mokdata"
+import useMypokemon from "../hooks/useMyPokemon";
 
 const StyledDetailCard = styled.div`
   display: flex;
@@ -30,11 +30,13 @@ const Detail = () => {
 
   // Redux Hooks 사용
   const myPokemon = useSelector((state) => state.myPokemon.myPokemon);
-  const dispatch = useDispatch();
+  const { addPokemon, removePokemon } = useMypokemon();
   const navigate = useNavigate();
 
   // 현재 포켓몬이 이미 내 포켓몬인지 확인
   const isMyPokemon = myPokemon.some((pokemon) => pokemon.id === id);
+
+  // pokemon Data에서 찾아서 Card 그리기 
   const pokemon = pokemonList.find((list) => list.id === id);
 
   return pokemon ? (
@@ -46,9 +48,9 @@ const Detail = () => {
       <p>{pokemon.description}</p>
       <button onClick={() => navigate("/Dex")}>뒤로가기</button>
       {isMyPokemon ? (
-        <button onClick={() => dispatch(removeMyPokemon(pokemon.id))}>삭제</button>
+        <button onClick={() => removePokemon(pokemon.id)}>삭제</button>
       ) : (
-        <button onClick={() => dispatch(addMyPokemon(pokemon.id))}>추가</button>
+        <button onClick={() => addPokemon(pokemon.id)}>추가</button>
       )}
     </StyledDetailCard>
   ) : (
