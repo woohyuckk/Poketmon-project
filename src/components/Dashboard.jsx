@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import useMypokemon from "../hooks/useMyPokemon";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 const MAX_POKEMON = 6;
 
 const StyledDashboard = styled.div`
@@ -55,43 +55,44 @@ const Title = styled.h1`
   }
 `;
 
-
-const Dashboard = ({ pokemonList }) => {
+const Dashboard = () => {
   const myPokemon = useSelector((state) => state.myPokemon.myPokemon);
   const { removePokemon } = useMypokemon();
 
   // myPokemon이 변경 될 때마다 localStorage에 저장
   useEffect(() => {
     localStorage.setItem("myPokemon", JSON.stringify(myPokemon));
-  },[myPokemon])
+  }, [myPokemon]);
 
-  const pokemonSlot = Array.from({ length: MAX_POKEMON }, (_, i) => {
-    // i번째 슬롯에 선택된 포켓몬이 있다면 포켓몬 카드 컴포넌트를 렌더링
-    if (i < myPokemon.length) {
-      const data = myPokemon[i];
+  const pokemonSlot =
+    Array.from({ length: MAX_POKEMON }, (_, i) => {
+      // i번째 슬롯에 선택된 포켓몬이 있다면 포켓몬 카드 컴포넌트를 렌더링
+      if (i < myPokemon.length) {
+        const data = myPokemon[i];
+        return (
+          <PokemonCard
+            key={data.id}
+            data={data}
+            myPokemonHandler={removePokemon}
+          
+            statusButton="삭제"
+          />
+        );
+      }
+      // 아직 선택되지 않은 슬롯은 포켓볼 이미지로 표시
       return (
-        <PokemonCard
-          key={data.id}
-          data={data}
-          myPokemonHandler={removePokemon}
-          pokemonList={pokemonList}
-          statusButton="삭제"
-        />
+        <StyledPokeBall key={i}>
+          <img
+            key={`pokeball-${i}`}
+            src={
+              "https://github.com/woohyuckk/Poketmon-project/blob/main/src/assets/pokeball.png?raw=true"
+            }
+            alt="Pokeball"
+          />
+        </StyledPokeBall>
       );
-    }
-    // 아직 선택되지 않은 슬롯은 포켓볼 이미지로 표시
-    return (
-      <StyledPokeBall key={Date.now() + i}>
-        <img
-          key={`pokeball-${i}`}
-          src={
-            "https://github.com/woohyuckk/Poketmon-project/blob/main/src/assets/pokeball.png?raw=true"
-          }
-          alt="Pokeball"
-        />
-      </StyledPokeBall>
-    );
-  });
+    })
+ 
 
   return (
     <StyledDashboard>

@@ -10,7 +10,6 @@ const myPokemonSlice = createSlice({
     // myPokemon 추가
     addMyPokemon: (state, action) => {
       const newPokemon = action.payload;
-      console.log(newPokemon)
       state.myPokemon.push(newPokemon);
       
     },
