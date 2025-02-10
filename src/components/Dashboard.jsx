@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import { useSelector } from "react-redux";
 import useMypokemon from "../hooks/useMyPokemon";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 const MAX_POKEMON = 6;
 
 const StyledDashboard = styled.div`
