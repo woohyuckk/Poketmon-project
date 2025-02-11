@@ -4,13 +4,13 @@ import MOCK_DATA from "../utils/mokdata";
 
 const Dex = () => {
 
-  
   return (
     <>
       <Dashboard pokemonList={MOCK_DATA}></Dashboard>
       <PokemonList pokemonList={MOCK_DATA} />
     </>
   );
+  
 };
 
 export default Dex;

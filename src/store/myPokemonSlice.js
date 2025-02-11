@@ -11,12 +11,10 @@ const myPokemonSlice = createSlice({
     addMyPokemon: (state, action) => {
       const newPokemon = action.payload;
       state.myPokemon.push(newPokemon);
-      
     },
     //my Pokemon 제거 
     removeMyPokemon: (state, action) => {
       state.myPokemon = state.myPokemon.filter((pokemon) => pokemon.id !== action.payload);
-  
     },
   },
 });

@@ -50,14 +50,14 @@ const GlobalStyle = createGlobalStyle`
     
     background-color:rgb(146, 160, 90);
     color: white;
+
     margin-bottom: 5px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.5 ease;
 
     &:hover {
-    background-color: red;
-
+      background-color: red;
     }
   }
 

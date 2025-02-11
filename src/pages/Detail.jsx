@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import {  useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import pokemonList from"../utils/mokdata"
+import pokemonList from "../utils/mokdata";
 import useMypokemon from "../hooks/useMyPokemon";
 
 const StyledDetailCard = styled.div`
@@ -20,8 +20,8 @@ const StylePokemonName = styled.p`
 `;
 
 const StyledPokemonImg = styled.img`
-width: 40%;
-`
+  width: 40%;
+`;
 
 const Detail = () => {
   // URL에서 query parameters 가져오기
@@ -36,7 +36,7 @@ const Detail = () => {
   // 현재 포켓몬이 이미 내 포켓몬인지 확인
   const isMyPokemon = myPokemon.some((pokemon) => pokemon.id === id);
 
-  // pokemon Data에서 찾아서 Card 그리기 
+  // pokemon Data에서 찾아서 Card 그리기
   const pokemon = pokemonList.find((list) => list.id === id);
 
   return pokemon ? (
