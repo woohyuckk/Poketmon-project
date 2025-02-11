@@ -83,7 +83,7 @@ const Dashboard = () => {
         <img
           key={`pokeball-${i}`}
           src={
-            "https://github.com/woohyuckk/Poketmon-project/blob/main/src/assets/pokeball.png?raw=true"
+            "https://private-user-images.githubusercontent.com/192562150/411798104-d8733f5a-870d-4b20-ab12-393c3c94d20f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkyMzc3MzgsIm5iZiI6MTczOTIzNzQzOCwicGF0aCI6Ii8xOTI1NjIxNTAvNDExNzk4MTA0LWQ4NzMzZjVhLTg3MGQtNGIyMC1hYjEyLTM5M2MzYzk0ZDIwZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxMVQwMTMwMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNTQ0ZmI5MGRkN2E4YTM2NjI3M2RhNGNlNTcxNDZmMmY4NTdkMzkxNjY2ZmUyMTY0MzBiOTExZDg1NGFkODU3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.wXVNFW8o6vqpd90LFC8ITUltEDgLQDIVhdIsM7r5AU0"
           }
           alt="Pokeball"
         />
